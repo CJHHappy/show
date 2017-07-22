@@ -1,0 +1,78 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+li {
+	list-style: none;
+}
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+#container {
+	width: 1000px;
+    height: auto;
+    margin: 50px auto;
+}
+#container .title-box {
+	overflow: hidden;
+}
+#container .title-box span {
+	display: block;
+	width: 80px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	cursor: default;
+}
+#container .title-box span.active {
+	background-color: orange;
+}
+#container .content-line {
+	width: inherit;
+	height: 1px;
+	background-color: orange;
+	position: relative;
+}
+#container .content-line .content-main {
+	display: none;
+	position: absolute;
+}
+#container .content-line div.active {
+	display: block;
+}
+#container .content-line .content-main ul li {
+	padding: 8px 10px;
+	cursor: default;
+}
+#container .content-line .content-main ul li:hover{
+	background-color: orange;
+}
+#container .content-line .content-main ul li:hover div.company{
+	display: block;
+}
+#container .content-line .content-main ul li div.company {
+	float:right;
+	width: 220px;
+	margin-left: 50px;
+	border: 1px solid orange;
+	display: none;
+}
+#container .content-line .content-main ul li div.company h3 {
+	padding: 5px 10px;
+}
+#container .content-line .content-main ul li div.company nav{
+	padding: 10px 0;
+	
+}
+#container .content-line .content-main ul li div.company nav a {
+	display: block;
+	width: 100px;
+	height: 40px;
+	border-bottom: 1px solid #555;
+	float: left;
+	line-height: 40px;
+	margin-left: 10px;
+}

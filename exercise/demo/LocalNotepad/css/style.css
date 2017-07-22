@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei"
+}
+html,body {
+    height: 100%;
+}
+body {
+    background: #fafc2a;
+    background: url('../images/1.jpg') no-repeat 0 -50px;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+a {text-decotation: none;}
+strong {font-weight: normal;}
+i,b {font-style: none;}
+
+/*样式开始*/
+#m-hidden {
+    height: 1px;
+    background: transparent;
+}
+#pub-box {
+    width: 1000px;
+    height: 220px;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: -140px;
+    transition: .6s;
+}
+#pub-box:hover {
+    margin-top: -1px;
+    transition: .6s;
+}
+#pub-box .content {
+    width: 100%;
+    height: 120px;
+    background: rgba(246, 248, 41, 0.5);
+    resize: none;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    padding: 10px;
+}
+#pub-box .but-box:after {
+    content:'';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+#pub-box .but-box .time-box{
+    float: left;
+}
+#pub-box .but-box .time-box:after {
+    content:'';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+#pub-box .but-box .time-box p {
+    float: left;
+    margin-top: 25px;
+    color: #fafc2a;
+}
+#pub-box .but-box .time-box .time-begin{}
+#pub-box .but-box .time-box .time-end{}
+#pub-box .but-box .time-box .time-begin,
+#pub-box .but-box .time-box .time-end {
+    margin-right: 30px;
+}
+#pub-box .but-box .time-box .time-begin input,
+#pub-box .but-box .time-box .time-end input,
+#pub-box .but-box .time-box .time-begin time,
+#pub-box .but-box .time-box .time-end time {
+    float: left;
+    margin: 0 3px;
+}
+#pub-box .but-box .time-box .time-begin input,
+#pub-box .but-box .time-box .time-end input {
+    display: block;
+    width: 40px;
+    height: 22px;
+    text-align: center;
+    outline: none;
+    background: rgba(246, 248, 41, 0.3);
+    border: none;
+    color: #000;
+}
+#pub-box .but-box .btn {
+    float: right;
+}
+#pub-box .but-box button {
+    display: block;
+    float: right;
+    width: 70px;
+    height: 30px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    background: #fafc2a;
+    color: #000;
+}
+#pub-box .but-box button:hover {
+    background: #f8fa5b;
+    color: #555;
+}
+#content {
+    width: 1000px;
+    height: auto;
+    margin: 50px auto 0 auto;
+}
+#content .c-b{
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #fafc2a;
+}
+#content .red-star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    line-height: 23px;
+}
+#content .fa-star {
+    color: #fafc2a;
+}
+#content .ms-cont-b {
+    width: 100%;
+}
+#content .ms-cont-b:after {
+    content:'';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+#content .ms-cont-b .ms-cont {
+    float: left;
+    max-width: 700px;
+    word-break: break-all;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+#content .ms-icon {
+    float: right;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 80px;
+    line-height: 80px;
+    /*color: #d71d2e;*/
+    color: #fafc2a;
+}
+#content .ms-b {
+    width: 100%;
+    margin-top: 20px;
+}
+#content .ms-b:after {
+    content:'';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+#content .ms-b .ms-time {
+    width: 600px;
+    float: left;
+    margin-top: 25px;
+}
+#content .ms-b .ms-time:after{
+    content:'';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+#content .ms-b .ms-btn {
+    float: right;
+    // display: none;
+}
+#content .ms-b .ms-time .create-t {
+    float: left;
+}
+#content .ms-b .ms-time .set-t{
+    float:left;
+    margin-left: 50px;
+}
+#content .ms-b .ms-btn button{
+    display: block;
+    float: right;
+    width: 70px;
+    height: 30px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+}
+#content .ms-b .ms-btn button.star {
+    width: 120px;
+    background: #fafc2a;
+    color: #000;
+}
+#content .ms-b .ms-btn button.del {
+    background: #fafc2a;
+    color: #000;
+}
+#content .ms-b .ms-btn button.finished {
+    width: 100px;
+    background: #fafc2a;
+    color: #000;
+}
+#content .ms-b .ms-btn button.del:hover {
+    background: #f0f204;
+}
+#content .ms-b .ms-btn button.star:hover {
+    background: #f0f204;
+}
+#content .ms-b .ms-btn button.finished:hover {
+    background: #f0f204;
+}
+
+
+
+

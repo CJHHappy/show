@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin:0;
+}
+li {
+    list-style:none;
+}
+.div1 {
+    width: 250px;
+    height: 40px;
+    margin: 50px auto;
+}
+.div1 .input {
+    width: 250px;
+    height: 40px;
+    border: 1px solid #58d;
+    text-indent: 10px;
+    outline: none;
+}
+.div1 .buttonList {
+    width:250px;
+    height:auto;
+    border: 1px solid #58d;
+    border-top: none;
+    display: none;
+}
+.div1 .buttonList li {
+    padding:5px 0 5px 10px;
+    letter-spacing: 1px;
+    cursor:default;
+}
+.div1 .buttonList li:hover {
+    background-color:#58d;
+}

@@ -1,0 +1,49 @@
+window.onload=function()
+{
+	var oUl=document.getElementById('ul1');
+	var oLi=oUl.getElementsByTagName('li')[0];
+
+	var oLeft=document.getElementById('left');
+	var oRight=document.getElementById('right');
+
+	var oBtn=document.getElementById('buttons');
+	var aSpan=oBtn.getElementsByTagName('span');
+
+	var Timer=null;
+	var index=0;
+	
+	oLeft.onclick=function(){
+		
+		if(index>3){
+            oUl.style.left=0;
+			index=0;
+			aSpan[index].className="num";
+		}
+		else{
+            oUl.style.left=oUl.offsetLeft-oLi.offsetWidth+'px';
+			for(var i=0;i<aSpan.length; i++){
+                aSpan[i].className="";
+			}
+			index++;
+			aSpan[index].className="num";
+		}
+	}
+	        
+				   /*if(index>3)
+					   {
+				       oUl.style.left=0;
+					   index=-1;
+				   }else
+					   {
+				    oUl.style.left=oUl.offsetLeft-oLi.offsetWidth+'px';
+		    index++;
+	            for(var i=0;i<aSpan.length; i++)
+		        {
+	                aSpan[i].className="";
+	            }
+				alert(index);
+	               aSpan[index].className="num";
+				   }*/
+	
+
+}

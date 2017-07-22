@@ -1,0 +1,244 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+#box{
+	width: 1000px;
+	height: auto;
+	margin: 50px auto;
+}
+#box .box_header{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #f3f3f3;
+}
+#box .box_header h4{
+	width: 150px;
+	height: 50px;
+	float: left;
+	text-align: center;
+}
+#box .box_header h4 strong{
+	color:red;
+}
+#box .box_header label{
+	float: left;
+    margin-left: 50px;
+}
+#box .box_header ul{
+	width: 480px;
+	height: 50px;
+	float: right;
+}
+#box .box_header ul li{
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin:0 35px;
+}
+#box #cont{
+	width:100%;
+	margin-top: 30px; 
+}
+#box #cont #shop1{
+
+}
+#box #cont #shop1 .shop_wrap{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 2px solid #555;
+}
+#box #cont #shop1 .shop_wrap label{
+	float: left;
+	margin-left: 20px;
+}
+#box #cont #shop1 .shop_wrap label #shop_name{
+	font-size: 14px;
+	color: #666;
+	margin-left: 5px;
+}
+#box #cont #shop1 .shop_wrap label #shop_all {
+	display: none;
+    width: 10px
+    height:10px;
+}
+#box #cont #shop1 .shop_wrap label #shop_name:hover{
+	color: red;
+}
+#box #cont #shop1 .shop_cont{
+	width: 100%; 
+}
+#box #cont #shop1 .shop_cont .shop_cont1{
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+#box #cont #shop1 .shop_cont .shop_cont1:after{
+    content: "";
+    display: block;
+    width: 0
+    height:0;
+    clear: both;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .mass{
+	width: 500px;
+	height: 120px;
+	float: left;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .mass .mass_input{
+	display: block;
+	float: left;
+	margin: 20px 0 0 20px;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .mass #mass_img{
+	display: block;
+	float: left;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #ccc;
+	margin: 20px 0 0 20px;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .mass .title{
+	display: block;
+	float: left;
+	width: 300px;
+	height: 120px;
+	margin-left:10px;
+	box-sizing: border-box;
+	padding: 20px;
+	font-size: 12px;
+	color: #666;
+	font-family: verdana;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .price{
+	width: 125px;
+	height: 120px;
+	float: left;
+	font-size: 18px;
+	line-height: 120px;
+	text-align: center;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .num{
+	width: 125px;
+	height: 120px;
+	float: left;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .num .num_wrap{
+	width: 80px;
+	height: 25px;
+	border: 1px solid #ccc;
+	margin: 45px auto;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .num .num_wrap .num_w_1{
+	display: block;
+	width: 20px;
+	height: 25px;
+	float: left;
+	border-right: 1px solid #ccc;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 25px;
+	cursor: pointer;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .num .num_wrap #num_inp{
+	display: block;
+	width: 40px;
+	float: left;
+	height: 25px;
+	outline:none;
+	border:none;
+	text-align: center;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .num .num_wrap .num_w_2{
+	display: block;
+	width: 20px;
+	height: 25px;
+	float: left;
+	border-left: 1px solid #ccc;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 25px;
+	cursor: pointer;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .count{
+	width: 125px;
+	height: 120px;
+	float: left;
+	text-align: center;
+	line-height: 120px;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .dele{
+	width: 123px;
+	height: 120px;
+	float: left;
+	text-align: center;
+	line-height: 120px;
+	cursor: pointer;
+}
+#box #cont #shop1 .shop_cont .shop_cont1 .dele i:hover{
+	color: red;
+}
+footer{
+	position: flex;
+	width: 100%;
+	height: 50px;
+	background: #ccc;
+	border-bottom: 2px solid red;
+	border-top: 1px solid #000;
+}
+footer .coun{
+	display: block;
+	float: left;
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+footer #coun-pric{
+	display: block;
+	float: left;
+	width: 120px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	color: red;
+}
+footer .jiesuan{
+	display: block;
+	float: left;
+	width: 80px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: red;
+	color: #fff;
+	margin: 7px 20px;
+	border-radius: 4px;
+}
+footer button{
+	display: block;
+	float: right;
+	width: 140px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: red;
+	color: #fff;
+	margin: 7px 20px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}

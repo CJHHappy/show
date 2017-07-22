@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    border: 1px solid #333;
+    position: relative;
+    cursor: default;
+}
+.container div {
+    border: 1px solid #581;
+    position: absolute;
+}

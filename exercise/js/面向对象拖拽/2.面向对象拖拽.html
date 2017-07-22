@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drag</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1 {
+			width:100px;
+			height:100px;
+			background-color:orange;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+	<script type="text/javascript">
+	(function() {
+
+		function Drag(id) {
+			this.disX = 0;
+			this.disY = 0;
+			this.div = document.getElementById(id);
+		}
+
+		Drag.prototype.init = function() {
+			var This = this;
+			this.div.onmousedown =  function(ev) {
+				var ev = ev || event;
+				This.mousedownAction(ev);
+				return false;
+			}
+		}
+
+	    Drag.prototype.mouseoverAction = function(ev) {
+			var ev = ev || event;
+			this.div.style.left = ev.clientX - this.disX + "px";
+			this.div.style.top = ev.clientY - this.disY + "px";
+		}
+
+		Drag.prototype.mouseupAction = function() {
+			document.onmouseover = null;
+			document.onmouseup = null;
+		}
+
+		Drag.prototype.mousedownAction = function(ev) {
+			var This = this;
+			this.disX = ev.clientX - this.div.offsetLeft;
+			this.disY = ev.clientY - this.div.offsetTop;
+			document.onmouseover = function(ev) {
+				This.mouseoverAction(ev);
+			}
+			document.onmouseup = This.mouseupAction;
+		}
+
+		window.Drag = Drag;
+		
+	})();
+
+	window.onload = function() {
+		var d = new Drag("div1");
+		d.init();
+	}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

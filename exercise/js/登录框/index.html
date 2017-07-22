@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=devic-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+	<title>126邮箱-鼠标移入移出事件</title>
+	<link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">
+	<style>
+         #li1{ background:#B5A082;}
+         #li2{background:#fff;}
+         #div1{display:none;}
+         #div2{display:block;}
+         #warn{display: none;}
+         #on{display: none;}
+         #off{display: block;}
+         #img1{left: 83px;}
+         #img2{display: none;}
+         #ul0{display: none;}
+	</style>
+	<script>
+   window.onload=function(){
+      var ochange=document.getElementById('change');
+      var oul0=document.getElementById('ul0');
+      ochange.onclick=function (){
+        oul0.style.display='block';
+      };
+    }  
+
+     function li1Show(){
+      	var oLi1=document.getElementById('li1');
+      	var oLi2=document.getElementById('li2');
+      	var oDiv1=document.getElementById('div1');
+      	var oDiv2=document.getElementById('div2');
+      	oLi1.style.background='#fff';
+      	oLi2.style.background='#B5A082';
+      	oDiv1.style.display='block'
+      	oDiv2.style.display='none'
+     }
+
+     function li2Show(){
+      	var oLi1=document.getElementById('li1');
+      	var oLi2=document.getElementById('li2');
+      	var oDiv1=document.getElementById('div1');
+      	var oDiv2=document.getElementById('div2');
+      	oLi2.style.background='#fff';
+      	oLi1.style.background='#B5A082';
+      	oDiv2.style.display='block'
+      	oDiv1.style.display='none'
+     }
+
+     function Warn(){
+        var owarn=document.getElementById('warn');
+        owarn.style.display='block';
+     }
+
+     function Hidden(){
+        var owarn=document.getElementById('warn');
+        owarn.style.display='none';
+     }
+
+     function passwordhidden(){
+        var ooff=document.getElementById('off');
+        var oon=document.getElementById('on');
+        var opassword=document.getElementById('password');
+        password.type='password';
+        oon.style.display='block';
+        ooff.style.display='none';
+     }
+
+     function passwordshow(){
+        var ooff=document.getElementById('off');
+        var oon=document.getElementById('on');
+         var opassword=document.getElementById('password');
+        password.type='text';
+        oon.style.display='none'
+         ooff.style.display='block';
+     }
+     
+     function erwei(){
+        var img1=document.getElementById('img1')
+        var img2=document.getElementById('img2')
+        img1.style.left=10+'px';
+        img2.style.display='block';
+     }
+
+     function phone(){
+        var img1=document.getElementById('img1')
+        var img2=document.getElementById('img2')
+        img1.style.left=83+'px';
+        img2.style.display='none';
+     }
+
+        
+     
+
+
+
+
+	</script>
+</head>
+<body>
+     <a id="change" href="">切换主题</a>
+  <ul class="ul0" id="ul0">
+    <li id="li4"><a href="">萌萌黑</a></li>
+    <li id="li5"><a href="">么么绿</a></li>
+    <li id="li6"><a href="">暴风雪</a></li>
+  </ul>
+	<ul class="ul1">
+		<li class="li1" id="li1" onmouseover=li1Show()>
+			<a href="">二维码登录</a>
+		</li>
+		<li class="li2" id="li2" onmouseover=li2Show()>
+			<a href="">邮箱账号登录</a>
+		</li>
+	</ul>
+	<div id="div1">  
+        <p class="p2">手机扫码 安全防盗</p> 
+        <img class="img1" id="img1" src="images/erwei.png" alt="" onmouseover=erwei()  onmouseout=phone()> 
+        <img class="img2" id="img2" onmouseover=erwei() onmouseout=phone() src="images/phone.gif" alt=""> 
+	</div>
+	<div id="div2">
+	     <i class="fa fa-user fa-2x"></i><input class="input1" type="text" placeholder="邮箱账号或手机号">
+       <i class="fa fa-unlock-alt fa-2x" ></i><input class="input2" id="password" type="text" placeholder="密码">
+       <input class="checkbox" id="checkbox" type="checkbox" >
+       <a href="" class="p1" id="p1" onmouseover=Warn() onmouseout=Hidden()>十天内免登录</a>
+       <div id="warn">为了你的信息安全，请不要再网吧或者公共电脑上使用此功能！</div>
+       <i class="fa fa-toggle-off" id="off" onclick=passwordhidden()></i>
+       <i class="fa fa-toggle-on" id="on" onclick=passwordshow()></i>
+      <a href=""><p class="button1">登录</p></a>
+      <a href=""><p class="button2">注册</p></a>
+
+	</div>
+</body>
+</html>

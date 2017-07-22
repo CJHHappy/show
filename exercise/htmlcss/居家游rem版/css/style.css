@@ -1,0 +1,214 @@
+ /*样式重置*/
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+}
+img {
+	display: block;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+body {
+
+	background-color: #eee;
+}
+/*工具样式*/
+.clear:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+/*主体样式*/
+.header {
+	width: 100%;
+	height: 2.2rem;
+	background-color: #16a44d;
+	position: relative;
+}
+.header .input-box {
+	float: left;
+}
+.header .input-box .search-icon {
+	background: url(../images/serch.gif) no-repeat;
+	display: block;
+	width:0.5rem;
+	height: 0.525rem;
+	position: absolute;
+	left: 1rem;
+	top: 0.85rem;
+	background-size: 0.5rem 0.525rem;
+}
+.header .input-box .saerch-input{
+	width: 12.5rem;
+	height: 1.225rem;
+	margin: 0.5rem 0 0 0.5rem;
+	border: none;
+	outline: none;
+	border-radius: 0.625rem;
+	box-sizing: border-box;
+	padding-left: 1.35rem;
+	font-size: 0.45rem;
+	letter-spacing: 2px;
+}
+.header .phone {
+	background: url('../images/phone.gif'); 
+	display: block;
+	float: right;
+	width: 0.875rem;
+	height: 0.875rem;
+	background-size: 0.875rem 0.875rem;
+	margin: 0.625rem 0.55rem 0 0;
+}
+.banner {
+	width: 100%;
+}
+.banner #banner-play li {
+	font-size: 0;
+}
+.banner #banner-play li .a-container {
+	display: block;
+}
+.banner #banner-play li a img {
+	width: 100%;
+	float: left;
+}
+.menu {
+	width: 100%;
+	height: 4.625rem;
+	background-color: #fff;
+}
+.menu .menu-button {
+	width: 25%;
+	height: 4.625rem;
+	float: left;
+}
+.menu .menu-button i {
+	display: block;
+	height: 1.925rem;
+	width: 1.925rem;
+	margin: 0.75rem 0 0 1rem;
+}
+.menu .menu-button:nth-child(1) i{
+	background: url(../images/menu1.gif) no-repeat;
+	background-size: 1.925rem 1.925rem;
+}
+.menu .menu-button:nth-child(2) i{
+	background: url(../images/menu2.gif) no-repeat;
+	background-size: 1.925rem 1.925rem;
+}
+.menu .menu-button:nth-child(3) i{
+	background: url(../images/menu3.gif) no-repeat;
+	background-size: 1.925rem 1.925rem;
+}
+.menu .menu-button:nth-child(4) i{
+	background: url(../images/menu4.gif) no-repeat;
+	background-size: 1.925rem 1.925rem;
+}
+.menu .menu-button span {
+	font-size: 0.45rem;
+	margin: 0 0 0 1.05rem;
+}
+.hot-site-box,
+.hot-home-box {
+	width: 100%;
+	background-color: #fff;
+	margin-top: 0.625rem;
+}
+.hot-site-box .hot-title,
+.hot-home-box .hot-title
+ {
+	width: 15rem;
+	height: 2.175rem;
+	border-bottom: 1px solid #ddd;
+	margin: 0 auto;
+}
+.hot-site-box .hot-title h4,
+.hot-home-box .hot-title h4
+ {
+	float: left;
+	border-left: 0.2rem solid #419e37;
+	margin-top: 0.45rem;
+	padding-left: 0.5rem;
+}
+.hot-site-box .hot-title a,
+.hot-home-box .hot-title a
+ {
+	margin-top: 0.45rem;
+	margin-right: 0.5rem;
+	float: right;
+	display: block;
+}
+.hot-site-box .hot-site-show-box,
+.hot-home-box .hot-home-show-box
+ {
+	width: 100%;
+	background-color: #fff;
+	padding-bottom: 0.5rem;
+}
+.hot-site-box .hot-site-show-box a,
+.hot-home-box .hot-home-show-box a
+ {
+	display: block;
+	margin: 0.5rem 0.5rem 0 0.5rem;
+}
+.hot-site-box .hot-site-show-box a img,
+.hot-home-box .hot-home-show-box a img
+ {
+	width: 100%;
+}
+.hot-home-box .hot-home-show-box a p {
+	font-size: 0.6rem;
+	margin-top: 0.5rem;
+}
+footer {
+	width: 100%;
+	height: auto;
+	margin-top: 0.5rem;
+	background-color: #fff;
+}
+footer .bar {
+	width: 100%;
+	height: 2.5rem;
+}
+footer .bar a {
+	width: 25%;
+	height: 2.5rem;
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	border-left: 1px solid #ccc;
+	position: relative;
+}
+footer .bar a:nth-child(1) {
+	border-left: none;
+	background: url(../images/home.png) no-repeat center 0.325rem;
+	background-size: 1.25rem 1.25rem;
+}
+footer .bar a:nth-child(2) {
+	background: url(../images/order.png) no-repeat center 0.325rem;
+	background-size: 1.025rem 1.125rem;
+}
+footer .bar a:nth-child(3) {
+	background: url(../images/news.png) no-repeat center 0.325rem;
+	background-size: 1.225rem 1.225rem;
+}
+footer .bar a:nth-child(4) {
+	background: url(../images/mine.png) no-repeat center 0.325rem;
+	background-size: 1.225rem 1.225rem;
+}
+
+footer .bar a p {
+	font-size: 0.55rem;
+	position: absolute;
+	bottom: 0.25rem;
+	left: 0;
+	line-height: 0.55rem;
+	text-align: center;
+	margin-left: 1.45rem;
+}
+footer .bar a p.active{
+	color: #419e37;
+}

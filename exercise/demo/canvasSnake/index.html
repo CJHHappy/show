@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>canvas</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #canvas {
+      display: block;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script type="text/javascript">
+  (function() {
+    var canvas = document.getElementById('canvas');
+    var cxt = canvas.getContext('2d');
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+    var pointsArr = [];//蛇长度存储;
+    var statesArr = [];//存储方向变动
+    var speedX = 0;//初始运动方向
+    var speedY = 1;
+    var initX = width / 2;//初始位置
+    var initY = height / 2;
+    var f = null;
+    var p = null;
+
+    function Point(x, y, color) {
+      this.x = x;
+      this.y = y;
+      this.speedX = 0;
+      this.speedY = 1;
+      this.states = [];
+      this.color = color;
+      this.draw = function() {
+        cxt.beginPath();
+        cxt.fillStyle = this.color;
+        cxt.arc(this.x, this.y, 5, 0, 2*Math.PI, false);
+        cxt.fill();
+        cxt.closePath();
+      }
+    }
+
+    function Food() {
+      this.x = Math.ceil(width * Math.random());
+      this.y = Math.ceil(height * Math.random());
+      this.color = "rgba("+Math.ceil(Math.random()*255)+","+Math.ceil(Math.random()*255)+","+Math.ceil(Math.random()*255)+",0.5)";
+      this.draw = function() {
+        cxt.beginPath();
+        cxt.fillStyle = this.color;
+        cxt.arc(this.x, this.y, 5, 0, 2*Math.PI, false);
+        cxt.fill();
+        cxt.closePath();
+      }
+    }
+    //添加方向状态
+    function addDir(x, y, pos) {
+      var pos = {
+        x: pos.x,
+        y: pos.y,
+        spX: x,
+        spY: y
+      };
+      for (var i = 0; i < pointsArr.length; i++) {
+        pointsArr[i].states.push(pos);
+      }
+    }
+    function judgeDis(x1, y1, x2, y2, d) { 
+      var a = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+      var dis = Math.sqrt(a);
+      if (dis < d) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    //初始化蛇
+    for (var i = 0; i < 5; i++) {
+      initY = initY + 2 * 5;
+      p = new Point(initX, initY, "orange");
+      pointsArr.push(p);
+    }
+    //初始化事物
+    f = new Food();
+    //改变方向
+    window.addEventListener('keydown', function(ev) {
+      var ev = ev || event;
+      var dir = {
+        x: pointsArr[0].x,
+        y: pointsArr[0].y
+      }
+      if (ev.keyCode == 37) {
+        addDir(-1, 0, dir);
+      } else if (ev.keyCode == 38) {
+        addDir(0, 1, dir);
+      } else if (ev.keyCode == 39) {
+        addDir(1, 0, dir);
+      } else if (ev.keyCode == 40) {
+        addDir(0, -1, dir);
+      }
+    }, false);
+
+    var timer = setInterval(function() {
+      cxt.clearRect(0, 0, width, height);
+      for (var i = 0; i < pointsArr.length; i++) {
+        for (var j = 0; j < pointsArr[i].states.length; j++) {
+          if (pointsArr[i].states[0].x != pointsArr[i].x || pointsArr[i].states[0].y != pointsArr[i].y) {
+            break;
+          } else if (pointsArr[i].states[j].x == pointsArr[i].x && pointsArr[i].states[j].y == pointsArr[i].y) {
+            pointsArr[i].speedX = pointsArr[i].states[j].spX;
+            pointsArr[i].speedY = pointsArr[i].states[j].spY;
+            pointsArr[i].states.shift(pointsArr[i].states[0]);
+          }
+        }
+      }
+      for (var i = 0; i < pointsArr.length; i++) {
+        pointsArr[i].x = pointsArr[i].x + pointsArr[i].speedX;
+        pointsArr[i].y = pointsArr[i].y - pointsArr[i].speedY;
+        if (pointsArr[i].x < 0 || pointsArr[i].x > width || pointsArr[i].y < 0 || pointsArr[i].y > height) {
+          clearInterval(timer);
+        }
+        pointsArr[i].draw();
+      }
+      if (judgeDis(pointsArr[0].x, pointsArr[0].y, f.x, f.y, 10)) {
+        var x;
+        var y;
+        var endPoint = {};
+        var len = pointsArr.length - 1;
+        var x1 = pointsArr[len].speedX;
+        var y1 = pointsArr[len].speedY;
+        f = new Food();
+        f.draw();
+        // p = new Point(pointsArr[len].x, pointsArr[len].y, "orange");
+        if (x1 == -1 && y1 ==0) {
+          x = pointsArr[len].x + 10;
+          y = pointsArr[len].y;
+        } else if (x1 == 0 && y1 == 1) {
+          x = pointsArr[len].x;
+          y = pointsArr[len].y - 10;
+        } else if (x1 == 1 && y1 == 0) {
+          x = pointsArr[len].x - 10;
+          y = pointsArr[len].y;
+        } else if (x1 == 0 && y1 == -1) {
+          x = pointsArr[len].x;
+          y = pointsArr[len].y + 10;
+        }
+        function Point(x, y, color) {
+          this.x = x;
+          this.y = y;
+          this.speedX = pointsArr[len].speedX;
+          this.speedY = pointsArr[len].speedY;
+          this.states = pointsArr[len].states;
+          this.color = color;
+          this.draw = function() {
+            cxt.beginPath();
+            cxt.fillStyle = this.color;
+            cxt.arc(this.x, this.y, 5, 0, 2*Math.PI, false);
+            cxt.fill();
+            cxt.closePath();
+          }
+        }
+        endPoint = new Point(x, y, "red");
+        pointsArr.push(endPoint);
+        console.log(pointsArr[len]);
+        console.log(endPoint);
+      }
+      f.draw();
+    }, 1);
+  })()
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+#container {
+	width: 400px;
+	height: 300px;
+	margin: 0 auto;
+	position: relative;
+}
+#container .content {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: 10px solid #555;
+	background-color: #f9f9f9;
+	padding: 5px;
+}
+#container .content span{
+	background: orange;
+}
+#container .buttons {
+	width: 70px;
+	height: auto;
+	position: absolute;
+	top: 0;
+	right: -70px;
+	background-color: yellow;
+}
+#container .buttons button {
+	width: inherit;
+	padding: 5px 10px;
+	border: none;
+	outline: none;
+	background-color: #888;
+	display: none;
+}
+#container .buttons button:hover {
+	background: #ccc;
+}
+#container .buttons span {
+	width: inherit;
+	border: none;
+	outline: none;
+	background-color: #888;
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	cursor: pointer;
+}
+#container .buttons span.bt-view:active {
+	opacity: 0.7;
+}
+#container .buttons button.bt-hide {
+	display: block;
+}
+#container .check {
+	width: 400px;
+	height: 150px;
+	box-sizing: border-box;
+	border: 10px solid #555;
+	margin-top: 20px; 
+	display: none;
+}
+#container .check .title {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background: #ccc;
+}
+#container .check .title span {
+	float: left;
+    padding: 0 15px;
+    cursor: pointer;
+}
+#container .check .title span.active {
+	background-color: #777;
+}
+#container .check .ch-box {
+	width: 100%;
+	height: calc(100% - 40px);
+	position: relative;
+} 
+#container .check .ch-box div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #ddd;
+	display: none;
+	line-height: 90px;
+	text-align: center;
+}
+#container .check .ch-box div input {
+	outline: none;
+	height: 30px;
+	border: none;
+}
+#container .check .ch-box div input.c-input1 {
+	width: 250px;
+	text-indent: 10px;
+}
+#container .check .ch-box div input.c-button,
+#container .check .ch-box div input.t-button {
+	width: 40px;
+	background: #ccc;
+	letter-spacing: 3px;
+}
+#container .check .ch-box div input.c-button:active,
+#container .check .ch-box div input.t-button:active {
+	background: #888;
+}
+#container .check .ch-box div input.t-t1,
+#container .check .ch-box div input.t-t2 {
+	width: 150px;
+	text-indent: 10px;
+} 
+#container .check .ch-box div.active{
+	display: block;
+}

@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+#formModule {
+    width: 90%;
+    margin: 0 auto;
+}
+#formModule p {
+    width: 100%;
+    margin: 20px auto 0 auto;
+}
+#formModule input {
+    width: 80%;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    box-sizing:border-box;
+    text-indent: 20px;
+}
+#formModule .buttons {
+    margin-top: 20px;
+}
+#formModule .buttons button{
+    width: 60px;
+    height: 30px;
+    border: 1px solid #666;
+    background-color: #58f;
+    border-radius: 3px;
+    outline: none;
+}
+#formModule .buttons button:active {
+    background-color: #57a;
+}
+#tableInfor {
+    width: 90%;
+    margin: 30px auto;
+}
+#tableInfor table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#tableInfor table tr {
+    width: 100%;
+}
+#tableInfor table tr td {
+    width: calc(100% / 6);
+    border: 1px solid #999;
+    text-align: center;
+    line-height: 40px;
+}

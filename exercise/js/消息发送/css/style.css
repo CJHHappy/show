@@ -1,0 +1,148 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+li{
+	list-style: none;
+}
+.container{
+	width: 300px;
+	height: 500px;
+	box-sizing: border-box;
+	border:5px solid #222;
+	border-radius: 10px;
+	margin: 0 auto;
+}
+.container .cont{
+	width: 280px;
+	height: 420px;
+	background-color: #f9f9f9;
+	margin: 5px auto 0 auto;
+	border:1px solid #222;
+	position: relative;
+}
+.container .cont #wechat{
+	width: 40px;
+	height: 40px;
+	font-size: 12px;
+	border-radius: 4px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	background-color: #0EBF0B;
+	letter-spacing: 2px;
+	margin: 20px 0 0 20px;
+	cursor: pointer;
+}
+.container .cont #mes-cont{
+	width: 280px;
+	height: 420px;
+	background-color: #FCFFDE;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.container .cont .small{
+	transition: .3s;
+	transform: scale(0.1);
+}
+.container .cont #mes-cont #mesage{
+	width: 100%;
+	height: 375px;
+	overflow: auto;
+}
+/*滚动条宽度*/
+.container .cont #mes-cont #mesage::-webkit-scrollbar{
+	width: 5px;
+}
+/*滚动条滑块颜色*/
+.container .cont #mes-cont #mesage::-webkit-scrollbar-thumb{
+	background-color: rgba(0,0,0,.2);
+}
+/*滚动条背景色*/
+.container .cont #mes-cont #mesage::-webkit-scrollbar-track{
+	background-color: #f2f2f2;
+}
+.container .cont #mes-cont #mesage div{
+	padding: 10px;
+	font-size: 12px;
+	margin-top: 10px;
+}
+.container .cont #mes-cont #mesage div:after{
+	content:'';
+	width: 0;
+	height: 0;
+	display: block;
+	clear: both;
+}
+.container .cont #mes-cont #mesage .lier{
+	float: left;
+}
+.container .cont #mes-cont #mesage .zhangsan{
+	float: right;
+}
+.container .cont #mes-cont #mesage span.lier1{
+	background-color: #0EBF0B;
+	max-width: 200px;
+	padding: 5px;
+	border-radius: 4px;
+	word-break: break-all;
+	word-wrap: break-word;
+	margin-left: 10px;
+	float: left;
+}
+.container .cont #mes-cont #mesage span.zhangsan1{
+	background-color: #f9f9f9;
+	max-width: 220px;
+	padding: 5px;
+	border-radius: 4px;
+	margin-right: 10px;
+	word-break: break-all;
+	word-wrap: break-word;
+	float: right;
+}
+.container .cont #mes-cont .user-cont{
+	width: 100%;
+	height: 45px;
+	border-top: 1px solid #999999;
+}
+.container .cont #mes-cont .user-cont #user{
+	width: 40px;
+	height: 45px;
+	display: block;
+	text-align: center;
+	line-height: 45px;
+	color: #999999;
+	float: left;
+	cursor: default;
+}
+.container .cont #mes-cont .user-cont input{
+	display: block;
+	border: none;
+	outline:none;
+	height: 30px;
+	float: left;
+	margin-left: 3px;
+	margin-top: 8px;
+	border-radius: 4px;
+}
+.container .cont #mes-cont .user-cont #text{
+	width: 190px;
+	text-indent: 10px;
+
+}
+.container .cont #mes-cont .user-cont #button{
+	width: 40px;
+}
+
+/*back按钮*/
+.container #back{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin: 8px auto 0 auto;
+	box-sizing: border-box;
+	border:5px solid #222;
+}

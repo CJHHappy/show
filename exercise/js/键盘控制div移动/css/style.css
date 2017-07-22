@@ -1,0 +1,12 @@
+* {
+    padding:0;
+    margin:0;
+}
+.div1 {
+    width:150px;
+    height:150px;
+    background-color:orange;
+    position: absolute;
+    left:0;
+    top: 0;
+}

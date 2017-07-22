@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无缝滚动</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script>
+     window.onload=function ()
+     {
+        var oBtn1=document.getElementById('button1')
+        var oBtn2=document.getElementById('button2')
+        var oUl=document.getElementById('ul1')
+        var oDiv1=document.getElementById('div1')
+        var iSpeed=3
+        var Timer
+        Timer=setInterval(move,20)
+        function move()
+        {
+               oUl.style.left=oUl.offsetLeft-iSpeed+'px'
+               if(oUl.offsetLeft<-oUl.offsetWidth/2)
+               {
+                   oUl.style.left=0+'px'
+               }
+               else if(oUl.offsetLeft>0)
+               {
+                   oUl.style.left=-oUl.offsetWidth/2+'px'
+               }
+
+           }
+           oBtn1.onclick=function ()
+           {
+            iSpeed=3
+           } 
+           oBtn2.onclick=function ()
+           {
+            iSpeed=-3
+           } 
+           oDiv1.onmouseover=function()
+           {
+           clearInterval(Timer)
+           }
+           oDiv1.onmouseout=function()
+           {
+            Timer=setInterval(move,20)
+           }
+        };
+</script>
+</head>
+
+<body>
+	<input id="button1" type="button" value="向左">
+	<input id="button2" type="button" value="向右">
+	<div id="div1">
+		<ul id="ul1">
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+  		*{padding: 0;margin:0;}
+  		html,body{height: 100%;width: 100%;background: #000;}
+  		div{width: 100%;margin-top: 300px;position: relative;}
+  		div p{width: 200px;height: auto;font-size: 50px;color: #fff;position: absolute;}
+  		div p.n{left: 300px;top: 0; animation:move1 2s 1;}
+  		div p.m{right: 300px;top: 0;animation:move2 2s 1;}
+  		
+  		@keyframes move1{
+			from{left:0;opacity: 0;}
+			to{left:300px;opacity: 1;}
+  		}
+  		@keyframes move2{
+			from{right:0;opacity: 0;}
+			to{right:300px;opacity:1;}
+  		}
+	</style>
+</head>
+<body>
+	<div>
+		<p class="n">wonderful</p>
+		<p class="m">to share</p>
+	</div>
+</body>
+</html>

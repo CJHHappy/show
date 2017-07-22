@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tab面向对象写法</title>
+	<style type="text/css">
+	#container,#container2 {
+		position: relative;
+		height: 300px;
+	}
+	#container div,#container2 div {
+		width:200px;
+		height:200px;
+		display: none;
+		border: 1px solid #333;
+		position: absolute;
+	}
+	.active {
+		background: red;
+	}
+	</style>
+	<script type="text/javascript">
+		// var container = null;
+		// var input = null;
+		// var div = null;
+		// window.onload = function() {
+		// 	container = document.getElementById('container');
+		// 	input = container.getElementsByTagName('input');
+		// 	div = container.getElementsByTagName('div');
+		// 	init();	
+		// }
+		// function init() {
+		// 	for (var i = 0; i < input.length; i++) {
+		// 		input[i].index = i;
+		// 		input[i].onclick = show;
+		// 	}
+		// }
+		// function show(){
+		// 	for (var j = 0; j < input.length; j++) {
+		// 		div[j].style.display = "none";
+		// 		input[j].className = "";
+		// 	}
+		// 	div[this.index].style.display = "block";
+		// 	this.className = "active";
+		// }
+		(function() {
+			function Tab(id) {
+				this.container = document.getElementById(id);
+				this.input= this.container.getElementsByTagName('input');
+		        this.div= this.container.getElementsByTagName('div');
+		        this.num = 0;
+			  }
+
+			Tab.prototype.init = function() {
+				var This = this;
+				for (var i = 0; i < this.input.length; i++) {
+			 		this.input[i].index = i;
+			 		this.input[i].onclick = function() {
+			 			var This_2 = this;
+			 			This.show(This_2);
+			 		}
+			 	}
+			}
+
+			Tab.prototype.show = function(This) {
+				for (var j = 0; j < this.input.length; j++) {
+			 		this.div[j].style.display = "none";
+			 		this.input[j].className = "";
+			 	}
+			    this.div[This.index].style.display = "block";
+			    This.className = "active";
+			}
+
+			Tab.prototype.autoPlay = function() {
+				var This = this;
+				setInterval(function() {
+					This.num++;
+					if (This.num > This.input.length - 1) {
+						This.num = 0;
+					}
+					for (var i = 0; i < This.input.length; i++) {
+						This.input[i].className = "";
+						This.div[i].style.display = "none";
+					}
+					This.input[This.num].className = "active";
+					This.div[This.num].style.display = "block"
+
+				}, 2000);
+			}
+			window.Tab = Tab;
+		})();
+		
+
+		window.onload = function() {
+			var t = new Tab("container");
+			t.init();
+			var t1 = new Tab("container2");
+			t1.autoPlay();
+		}
+	</script>
+</head>
+<body>
+	<div id="container">
+		<input type="button" name="" value="1" class="active">
+		<input type="button" name="" value="2">
+		<input type="button" name="" value="3">
+		<div style="display:block;" class="div1">1111</div>
+		<div class="div1">2223</div>
+		<div class="div1">3333</div>
+	</div>
+
+	<div id="container2">
+		<input type="button" name="" value="1" class="active">
+		<input type="button" name="" value="2">
+		<input type="button" name="" value="3">
+		<div style="display:block;" class="div1">1111</div>
+		<div class="div1">2223</div>
+		<div class="div1">3333</div>
+	</div>
+	
+</body>
+</html>

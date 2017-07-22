@@ -1,0 +1,133 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+}
+.box{
+	width: 600px;
+	padding: 20px;
+	overflow: auto;
+	background-color: #ccc;
+	margin: 0 auto;
+	box-shadow: 0px 0px 20px #444;
+}
+.box .container{
+	width: 100%;
+	height: auto;
+	background-color:#fff; 
+}
+.box .container .title{
+	width: 100%;
+	height: auto;
+}
+.box .container .title:after{
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	clear: both;
+}
+.box .container .title span{
+	display: block;
+	float: left;
+	padding: 8px;
+	margin: 0 10px 0 0;
+	background-color: orange;
+	color: #fff;
+	cursor: default;
+}
+.box .container .cont{
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid orange;
+}
+.box .container .cont:after{
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	clear: both;
+}
+
+.box .container .cont .cont-list:after,
+.box .container .cont .cont-list2:after,
+.box .container .cont .cont-list3:after{
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	clear: both;
+}
+/*list*/
+.box .container .cont .cont-list{
+	padding: 10px 0;
+	border-bottom: 1px dotted red;
+	background-color: #fff;
+}
+.box .container .cont .cont-list img{
+	display: block;
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+.box .container .cont .cont-list h3{
+	display: none;
+}
+.box .container .cont .cont-list p{
+	float: left;
+	line-height: 40px;
+	margin-left:40px;
+	color: #999;
+}
+/*zhongtu*/
+.box .container .cont .cont-list2{
+	padding: 10px 0;
+	border-bottom: 1px dotted red;
+	background-color: #fff;
+}
+.box .container .cont .cont-list2 img{
+	display: block;
+	width: 120px;
+	height: 120px;
+	float: left;
+}
+.box .container .cont .cont-list2 h3{
+	line-height: 40px;
+	margin-left:160px;
+	color: #222;
+}
+.box .container .cont .cont-list2 p{
+	float: left;
+	line-height: 40px;
+	margin:20px 0 0 40px;
+	color: #999;
+}
+
+/*table*/
+.box .container .cont .cont-list3{
+	width: 50%;
+	padding: 10px 0;
+	border-bottom: 1px dotted red;
+	background-color: #fff;
+	float: left;
+}
+.box .container .cont .cont-list3 img{
+	display: block;
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+.box .container .cont .cont-list3 h3{
+	display: none;
+}
+.box .container .cont .cont-list3 p{
+	line-height: 40px;
+	margin-left: 100px;
+	color: #999;
+	box-sizing: border-box;
+	padding: 5px;
+}
+
+

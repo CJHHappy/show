@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>多级联动</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    #box {
+        cursor: default;
+    }
+        #box .one li ul {
+            display: none;
+        }
+        #box .one {
+            margin-left: 50px;
+            position: relative;
+        }
+        #box .one .child {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul class="one">
+        <li onclick="isShow(event,this)" data-key="false">
+        1
+            <ul class="child">
+                <li onclick="isShow(event,this)" data-key="false">1</li>
+                <li onclick="isShow(event,this)" data-key="false">2</li>
+                <li onclick="isShow(event,this)" data-key="false">3
+                    <ul class="child">
+                        <li onclick="isShow(event,this)" data-key="false">1</li>
+                        <li onclick="isShow(event,this)" data-key="false">2</li>
+                        <li onclick="isShow(event,this)" data-key="false">3
+                            <ul class="child">
+                                <li onclick="isShow(event,this)" data-key="false">1</li>
+                                <li onclick="isShow(event,this)" data-key="false">2</li>
+                                <li onclick="isShow(event,this)" data-key="false">3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li onclick="isShow(event,this)" data-key="false">2
+            <ul class="child">
+                <li onclick="isShow(event,this)" data-key="false">1</li>
+                <li onclick="isShow(event,this)" data-key="false">2</li>
+                <li onclick="isShow(event,this)" data-key="false">3</li>
+            </ul>
+        </li>
+        <li onclick="isShow(event,this)" data-key="false">3
+            <ul class="child">
+                <li onclick="isShow(event,this)" data-key="false">1</li>
+                <li onclick="isShow(event,this)" data-key="false">2</li>
+                <li onclick="isShow(event,this)" data-key="false">3</li>
+            </ul>
+        </li>
+        <li onclick="isShow(event,this)" data-key="false">4
+            <ul class="child">
+                <li onclick="isShow(event,this)" data-key="false">1</li>
+                <li onclick="isShow(event,this)" data-key="false">2</li>
+                <li onclick="isShow(event,this)" data-key="false">3</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+    /*
+    *   数据统一有 {
+    *       id: X-X-x..,
+    *       title: 链接名称，
+    *       href: 链接地址,
+    *       type: 节点类型，
+    *       children: 子节点数目.
+    *   }
+    */
+    var data = [
+    {
+        id: "1",
+        title: "js学习",
+        href: "",
+        type: parent,
+        children: []
+    },
+    {
+        id: "2",
+        title: "css学习",
+        href: "",
+        type: parent,
+        children: []
+    }
+    ];
+    function stopBubble(ev) {
+        var ev = ev? ev : window.event;
+        if (ev.stopPropagation) {
+            ev.stopPropagation(); // w3c标准
+        } else {
+            ev.cancelBubble = true; // ie
+        }
+    }
+    function isShow(ev,self) {
+        ev.stopPropagation();
+        var mineChild = self.children,
+            key = self.getAttribute("data-key");
+
+        if (mineChild.length == 0) {
+            return false;
+        }
+
+        if (key == "true") {
+            self.setAttribute("data-key", false);
+            mineChild[0].style.display = "none";
+        } else {
+            self.setAttribute("data-key", true);
+            mineChild[0].style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>

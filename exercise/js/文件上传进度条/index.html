@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<script>
+	function check() {
+		if (typeof FileReader == "undified") {
+			alert(1);
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	var reader;
+	var step = 1024;
+	var loaded = 0;
+	var total = 0;
+	var file;
+	var i = 0;
+	function initData() {
+		step = 1000;
+		loaded = 0;
+		times = 0;
+		total = 0;
+		document.getElementById('abortBtn').disabled = true;
+	}
+
+	function uploadFileHeadler() {
+		initData();
+		if (check() == false) {
+			return false;
+		}
+		file = document.getElementById('file').files[0];
+		reader = new FileReader();
+		total = file.size;
+		document.getElementById('abortBtn').disabled = false;
+
+		reader.onprogress = function(e) {
+			console.log( i + '-----------' + e.loaded);
+			loaded += e.loaded;
+			document.getElementById('progress').value = (loaded / total) * 100;
+			i++;
+		}
+
+		reader.onload = function(e) {
+			if (loaded < total) {
+				readBlob(loaded);
+				document.getElementById('result').innerHTML = "文件上传中...";
+			} else {
+				loaded = total;
+				document.getElementById('abortBtn').disabled = true;
+				document.getElementById('result').innerHTML = "文件上传完毕...";
+			}
+		}
+
+		reader.onerror = function(e) {
+			initData();
+			document.getElementById('result').innerHTML = "出错...";
+		}
+		readBlob(0);
+	}
+
+	function readBlob(start) {
+		var blob;
+		times += 1;
+		blob = file.slice(start, start + step)
+		reader.readAsBinaryString(blob);
+		console.log(reader.result);
+	}
+
+	function abortFileHandler() {
+		if (document.getElementById('abortBtn').value == "中断") {
+			if (reader) {
+				reader.abort();
+				console.log('中断了');
+			}
+			document.getElementById('abortBtn').value = "继续";
+		} else if (document.getElementById('abortBtn').value == "继续") {
+			if (reader) {
+				readBlob(loaded);
+			}
+			document.getElementById('abortBtn').value == "中断"
+		}
+	}
+
+</script>
+<body>
+	<input type="file" id="file">
+	<input type="button" value="上传" id="beginBtn" onclick="uploadFileHeadler()">
+	<input type="button" value="中断" id="abortBtn" onclick="abortFileHandler()">
+	<div><progress id="progress" value="0" max="100"></progress></div>
+	<div id="result"></div>
+</body>
+</html>

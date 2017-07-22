@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="e"></div>
+	<script>
+	var e = document.getElementById('e');
+	
+	var a = new Date();//获取当前时间  包括年月日星期 小时分 秒
+	var iYear = a.getFullYear();
+	var iMonth = a.getMonth();
+	var idate = a.getDate();
+	var iDay = a.getDay();
+	var iH = a.getHours();
+	var iSecond = a.getSeconds();
+	var iMinutes = a.getMinutes();
+	    num();
+	    setInterval(function(){
+	        var a = new Date();//获取当前时间  包括年月日星期 小时分 秒
+	    	var iYear = a.getFullYear();
+	    	var iMonth = a.getMonth();
+	    	var idate = a.getDate();
+	    	var iDay = a.getDay();
+	    	var iH = a.getHours();
+	    	var iSecond = a.getSeconds();
+	    	var iMinutes = a.getMinutes();
+	    var c = iYear + "年" + (iMonth + 1) + "月" + idate + "日" + "星期" + iDay + iH + "时" + iMinutes + "分" + add0(iSecond) + "秒";
+
+	    	e.innerHTML = c;
+	    },1000);	
+	    	function num(){
+	    		var c = iYear + "年" + (iMonth + 1) + "月" + idate + "日" + "星期" + iDay + iH + "时" + iMinutes + "分" + add0(iSecond) + "秒";
+
+	    	e.innerHTML = c;
+	    	}
+	    	function add0(sco){
+	    		var s = sco;
+	    		if(s<10){
+	    		    s = "0" + s;
+	    		}
+	    		 return s;
+	    	}
+	</script>
+</body>
+</html>
