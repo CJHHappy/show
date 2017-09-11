@@ -1,0 +1,432 @@
+.remMe-mark,
+.remMe-isbtn,
+.remMe-isbtn div,
+.remMe-isbtn button,
+.reMe,
+.reMe div,
+.reMe button,
+.remMe-isExtend,
+.remMe-isExtend div,
+.remMe-isExtend button {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+html,body {
+    height: 100%;
+    margin: 0 auto;
+}
+ /*遮罩层*/
+.remMe-mark {
+    position:fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+ /*btnwarn*/
+.remMe-isbtn {
+    width: 350px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.8);
+    background-color: #fff;
+    z-index: 1000;
+    border-radius: 3px;
+    opacity: 0;
+}
+.remMe-isbtn-animation {
+    opacity: 1;
+    transform: translateY(-50px);
+    transition: 0.5s;
+}
+.remMe-isbtn .remMe-title{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #D84E42;
+    color: #fefefe;
+    letter-spacing: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/*isbtn*/
+.remMe-isbtn .remMe-cotent-isbtn {
+    width: 100%;
+    padding: 20px 20px 10px 20px;
+    box-sizing: border-box;
+}
+    /*btnwarn*/
+.remMe-isbtn .remMe-cotent-isbtn .remMe-btnwarn-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #D84E42;
+    border-radius: 50%;
+}
+.remMe-isbtn .remMe-cotent-isbtn .remMe-btnwarn-icon:after {
+    position: absolute;
+    display: block;
+    width: 50px;
+    content: "!";
+    font-size: 40px;
+    color: #D84E42;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -6px;
+}
+    /*btnfinish*/
+.remMe-isbtn .remMe-cotent-isbtn .remMe-btnfinish-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #D84E42;
+    border-radius: 50%;
+}
+.remMe-isbtn .remMe-cotent-isbtn .remMe-btnfinish-icon:after {
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 18px;
+    content: "";
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -17px;
+    border-left: 2px solid #D84E42;
+    border-bottom: 2px solid #D84E42;
+    transform: rotate(-43deg);
+}
+    /*btnquery*/
+.remMe-isbtn .remMe-cotent-isbtn .remMe-btnquery-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #D84E42;
+    border-radius: 50%;
+}
+.remMe-isbtn .remMe-cotent-isbtn .remMe-btnquery-icon:after {
+    position: absolute;
+    display: block;
+    width: 50px;
+    content: "?";
+    font-size: 40px;
+    color: #D84E42;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -9px;
+}
+    /*btnerror*/
+.remMe-isbtn .remMe-cotent-isbtn .remMe-btnerror-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #D84E42;
+    border-radius: 50%;
+}
+.remMe-isbtn .remMe-cotent-isbtn .remMe-btnerror-icon:after {
+    position: absolute;
+    display: block;
+    width: 50px;
+    content: "+";
+    font-size: 60px;
+    color: #D84E42;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -19px;
+    transform: rotate(45deg);
+}
+.remMe-isbtn .remMe-cotent-isbtn .remMe-info-isbtn {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.remMe-isbtn .remMe-btns,
+.remMe-isExtend .remMe-btns {
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.remMe-isbtn .remMe-btns button,
+.remMe-isExtend .remMe-btns button {
+    width: 80px;
+    height: 35px;
+    color: #dede;
+    letter-spacing: 3px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #D84E42;
+    background-color: #fff;
+    color: #D84E42;
+    cursor: pointer;
+}
+.remMe-isbtn .remMe-btns .remMe-btnno,
+.remMe-isExtend .remMe-btns .remMe-btnno{
+    margin-right: 100px;
+}
+.remMe-isbtn .remMe-btns button:hover,
+.remMe-isExtend .remMe-btns button:hover {
+    background-color: #D84E42;
+    transition: 0.3s;
+    color:#fefefe;
+}
+.remMe {
+    max-width: 210px;
+    padding: 10px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #fff;
+    z-index: 1000;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.8);
+    opacity: 0;
+    transform: translateY(30px);
+}
+.remMe-animation {
+    opacity: 1;
+    transform: translateY(-30px);
+    transition: 0.5s;
+}
+/*.remMe-icon-finish*/
+.remMe .remMe-cotent .remMe-icon-finish {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #77D78A;
+    border-radius: 50%;
+}
+.remMe .remMe-cotent .remMe-icon-finish:before {
+    content: "";
+    width: 24px;
+    height: 12px;
+    display: block;
+    box-sizing: border-box;
+    border-left: 2px solid #77D78A;
+    border-bottom: 2px solid #77D78A;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -13px;
+    margin-top: -9px;
+}
+    /*remMe-icon-warn*/
+.remMe .remMe-cotent .remMe-icon-warn {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #D84E42;
+    border-radius: 50%;
+}
+.remMe .remMe-cotent .remMe-icon-warn:before {
+    content: "!";
+    font-size: 30px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -20px;
+    color: #D84E42;
+}
+    /*.remMe-info*/
+.remMe .remMe-cotent .remMe-info {
+    width: 100%;
+    padding-top: 5px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+}
+
+/*isExtend*/
+.remMe-isExtend {
+    width: 350px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.8);
+    background-color: #fff;
+    z-index: 1000;
+    border-radius: 3px;
+    transform: translateY(30px);
+    opacity: 0;
+}
+.remMe-isExtend-animation {
+    opacity: 1;
+    transform: translateY(-30px);
+    transition: 0.5s;
+}
+.remMe-isExtend .remMe-title{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #D84E42;
+    color: #fefefe;
+    letter-spacing: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.remMe-isExtend .remMe-cotent-isExtend {
+    width: 100%;
+    padding: 10px 20px 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.remMe .remMe-cotent .remMe-info-isExtend {
+    width: 100%;
+    padding-top: 5px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+}
+.remMe-isExtend .remMe-isExtend-box {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.remMe-isExtend .remMe-extend {
+   width: 100%;
+   margin-bottom: 20px;
+   max-height: 334px;
+   background-color: #f9f9f9;
+   padding: 20px;
+   box-sizing: border-box;
+   word-wrap:break-word;
+   word-break: break-all;
+   overflow-x: hidden;
+   overflow-y: auto;
+   line-height: 25px;
+}
+
+.remMe-load {
+    max-width: 400px;
+    padding: 10px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #fff;
+    z-index: 1000;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.8);
+    transform: translateY(20px);
+    opacity: 0;
+}
+.remMe-load-animation {
+    opacity: 1;
+    transform: translateY(-20px);
+    transition: 1s;
+}
+
+.remMe-load .remMe-load-content {
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.remMe-load .remMe-load-content:after {
+    content: '';
+    width: 0;
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+.remMe-load .remMe-load-content .remMe-load-info {
+    float:left;
+}
+.remMe-load .remMe-load-content .remMe-load-icon {
+    position: relative;
+    float: right;
+    width: 40px;
+    height: 21px;
+    margin-left: 5px;
+}
+.remMe-load .remMe-load-content .remMe-load-icon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #D84E42;
+    animation: loadleft 1.5s infinite;
+}
+.remMe-load .remMe-load-content .remMe-load-icon::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #2177C7;
+    animation: loadright 1.5s infinite;
+}
+@keyframes loadleft {
+    0% {
+        left: 0;
+    }
+    25% {
+        transform: scale(0.8);
+    }
+    50% {
+        left: 30px;
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(0.8);
+    }
+    100% {
+        left: 0;
+        transform: scale(1);
+    }
+}
+@keyframes loadright {
+    0% {
+        left: 30px;
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.8);
+    }
+    50% {
+        left: 0px;
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(0.8);
+    }
+    100% {
+        left: 30px;
+        transform: scale(1);
+    }
+}

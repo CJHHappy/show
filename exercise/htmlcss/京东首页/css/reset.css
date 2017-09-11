@@ -1,0 +1,29 @@
+/*1.清除标签默认内外边距*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+/*2.全局字体的设置*/
+body{font:12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;} 
+/*3、取消项目符号和编号*/
+ul,ol,li{ list-style: none ; } 
+/*4、图片*/
+img{ border:none; }  /*将img放入到a标签,IE会加上边框*/
+/*5、超级链接*/
+a{ text-decoration:none;   /*取消下划线*/
+cursor:pointer;  /*设置鼠标样式,设置为手型*/
+ color:#999; }
+/*a:link{},a:visited{ color:#004276; } */
+a:hover{ /*text-decoration:underline;*/  }
+/*6.清除浮动*/
+.clearfloat::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*7.设置边框的单一边框*/
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*8.让越界的英文单词两行显示*/
+p{word-wrap:break-word;}

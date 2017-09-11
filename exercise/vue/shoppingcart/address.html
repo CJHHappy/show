@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>地址选配</title>
+        <link rel="stylesheet" href="stylesheets/address.css" media="screen" title="no title">
+        <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css" media="screen" title="no title">
+        <link rel="stylesheet" href="stylesheets/RemindMe.css" media="screen" title="no title">
+        <script type="text/javascript" src="javascripts/vue.js"></script>
+        <script type="text/javascript" src="javascripts/addressData.js"></script>
+        <script type="text/javascript" src="javascripts/RemindMe.js"></script>
+    </head>
+    <body>
+
+        <div class="box">
+            <div class="header">
+                <ul class="ul1">
+                    <li class="active1 active2"><a href="javacript:;">地址确认</a></li>
+                    <li class="active1 "><a href="javacript:;">查看订单</a></li>
+                    <li class="active1 "><a href="javacript:;">支付</a></li>
+                    <li class="active1 "><a href="javacript:;">订单确认</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="top-title">
+                    <span class="common line t-line-l"></span>
+                    <span class="common t-title">配送地址</span>
+                    <span class="common line t-line-r"></span>
+                </div>
+                <div class="address-list clearfix">
+                    <div class="list .clearfix" v-for="(item, index) in addressList">
+                        <div class="left">
+                            <p class="add-user">{{item.username}}</p>
+                            <p class="add-address">{{item.useraddress}}</p>
+                            <p class="add-phone">电话：<span class="p-num">{{item.userphone}}</span></p>
+                            <p class="add-default" v-if="item.isDefaultAddress">默认地址</p>
+                        </div>
+                        <div class="right">
+                            <span class="edite-top fa fa-pencil" @click="write(item)"></span>
+                            <span class="set-def fa fa-heart-o" @click="setDef(item)"></span>
+                            <span class="delet-bot fa fa-trash-o" @click="delet(index)"></span>
+                        </div>
+                    </div>
+
+                    <div class="list .clearfix list1">
+                        <div class="ad-ad" @click="addAddress()">
+                            <div class="adicon">
+                                +
+                            </div>
+                            <div class="icontit">
+                                添加新地址
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-box">
+                <div class="b-i-b" @click="more()">
+                    <span class="more">more</span>
+                    <span class="b-i fa" :class='{"fa-angle-down": down, "fa-angle-up": up}'></span>
+                </div>
+            </div>
+            <div class="top-title">
+                <span class="common line t-line-l"></span>
+                <span class="common t-title">配送方式</span>
+                <span class="common line t-line-r"></span>
+            </div>
+            <div class="s-meth">
+                <div class="s-m-nor">
+                    <p>普通配送</p>
+                    <p class="s-info">Free</p>
+                </div>
+                <div class="s-m-vip">
+                    <p>高级配送</p>
+                    <p class="s-info">￥ 6.00</p>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="javascripts/address.js"></script>
+    </body>
+</html>

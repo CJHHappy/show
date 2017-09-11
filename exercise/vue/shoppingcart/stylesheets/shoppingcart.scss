@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+$commonColor: #E81123;
+@mixin radius($t-s,$r-s,$b-s,$l-s){
+    border-top-left-radius: $t-s;
+    border-top-right-radius: $r-s;
+    border-bottom-right-radius: $b-s;
+    border-bottom-left-radius: $l-s;
+}
+@mixin radiusAll($size) {
+    border-radius: $size;
+}
+@mixin positionMiddle($top, $left) {
+    top: 50%;
+    left: 50%;
+    margin-top: $top;
+    margin-left: $left;
+}
+.clearfix {
+    &:after {
+        content: '';
+        height: 0;
+        display: block;
+        clear: both;
+        visibility: hidden;
+    }
+}
+/* 顶部标题 */
+#top-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 30px;
+    margin: 0 auto;
+    border-top: 2px solid $commonColor;
+
+    .common {
+        display: inline-block;
+    }
+    .line {
+        height: 1px;
+    }
+    .t-line-l {
+        flex:1;
+        background-color:#ccc;
+    }
+    .t-line-r {
+        flex:1;
+        background-color:#ccc;
+    }
+    .t-title {
+        flex:none;
+        width: 100px;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 100px;
+        background-color:#fff;
+    }
+}
+
+/* 购物车主体 */
+#shopping-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 30px;
+
+    .shopping-table {
+        width: 1000px;
+        background-color: #ccc;
+        margin: 0 auto;
+
+        .table-title {
+            height:40px;
+            background-color: #555;
+            border: 1px solid #ccc;
+            border-bottom: none;
+
+            span {
+                display: block;
+                float:left;
+                text-align: center;
+                line-height: 40px;
+                font-weight:bold;
+                color: #dedede;
+                cursor: default;
+            }
+            .checkall {
+                position: relative;
+                width: 80px;
+                text-indent: 20px;
+                color: #dedede;
+                cursor: pointer;
+
+                &:after {
+                    content:"";
+                    position: absolute;
+                    @include positionMiddle(-5px, -25px);
+                    width: 10px;
+                    height: 10px;
+                    display: block;
+                    @include radiusAll(10px);
+                    background-color: #fff;
+                }
+            }
+            .checkall-active {
+                position: relative;
+                width: 80px;
+                text-indent: 20px;
+                color: $commonColor;
+                cursor: pointer;
+
+                &:after {
+                    content:"";
+                    position: absolute;
+                    @include positionMiddle(-5px, -25px);
+                    width: 10px;
+                    height: 10px;
+                    display: block;
+                    @include radiusAll(10px);
+                    background-color: $commonColor;
+                }
+            }
+            .goodsinfo {
+                width: 400px;
+            }
+            .goodsprice {
+                width: 100px;
+            }
+            .goodscount {
+                width: 160px;
+            }
+            .goodssum {
+                width: 160px;
+            }
+            .goodsedite {
+                width: 98px;
+            }
+        }
+        .goods {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-top: none;
+            background-color: #fff;
+            font-size: 14px;
+
+            .w {
+                min-height: 160px;
+                float: left;
+            }
+            .g-c {
+                position: relative;
+                width:80px;
+                cursor: pointer;
+
+                &:after {
+                    content:"";
+                    position: absolute;
+                    @include positionMiddle(-25px, -5px);
+                    width: 10px;
+                    height: 10px;
+                    display: block;
+                    border: 1px solid #ccc;
+                    @include radiusAll(10px);
+                    background-color: #fff;
+                }
+            }
+            .g-c-active {
+                position: relative;
+                width:80px;
+                cursor: pointer;
+
+                &:after {
+                    content:"";
+                    position: absolute;
+                    @include positionMiddle(-25px, -5px);
+                    width: 10px;
+                    height: 10px;
+                    display: block;
+                    border: 1px solid #ccc;
+                    @include radiusAll(10px);
+                    background-color: $commonColor;
+                }
+            }
+            .g-info {
+                width:400px;
+                box-sizing: border-box;
+                padding: 20px 20px;
+
+                .g-img {
+                    display: block;
+                    float:left;
+                    width: 60px;
+                    height: 80px;
+                    border:none;
+                }
+                .g-i-box {
+                    float: right;
+                    width:280px;
+
+                    .title {
+                        width: 100%;
+                        height: 60px;
+                        line-height: 1.7em;
+                    }
+                    .present {
+                        .p-ti {
+                            color: $commonColor;
+                        }
+                        li {
+                            margin-left: 40px;
+                            color: #aaa;
+                        }
+                    }
+                }
+            }
+            .g-price {
+                width:100px;
+                text-align: center;
+                line-height: 160px;
+            }
+            .g-count {
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                width:160px;
+
+                .g-c-box {
+                    width: 100px;
+                    height: 25px;
+                    border: 1px solid #ccc;
+
+                    span,input {
+                        float: left;
+                        display: block;
+                        text-align: center;
+                        line-height: 25px;
+                        cursor: pointer;
+                    }
+                    input {
+                        outline: none;
+                    }
+                    .reducec {
+                        width:30px;
+                        background-color: #eee;
+                        transition: 0.3s;
+
+                        &:hover {
+                            background-color: $commonColor;
+                            transition:0.5s;
+                        }
+                    }
+                    .numc {
+                        width: 40px;
+                        box-sizing: border-box;
+                        border: 1px solid #ccc;
+                        border-top: none;
+                        border-bottom: none;
+                    }
+                    .addc {
+                        width: 30px;
+                        background-color: #eee;
+                        transition: 0.3s;
+
+                        &:hover {
+                            background-color: $commonColor;
+                            transition:0.5s;
+                        }
+                    }
+                }
+            }
+            .g-sum {
+                width:160px;
+                text-align: center;
+                line-height: 160px;
+                color: $commonColor;
+            }
+            .g-edite {
+                width:98px;
+                text-align: center;
+                line-height: 160px;
+                color: #58a;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .shopping-footer {
+        width: 1000px;
+        height: 60px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .total-t {
+            padding: 8px 0;
+        }
+        .total {
+            padding: 8px 30px 8px 10px;
+            color: $commonColor;
+        }
+        .btn {
+            width: 150px;
+            height: 35px;
+            letter-spacing: 2px;
+            color: #fff;
+            background-color: $commonColor;
+            outline: none;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #fff;
+                border: 1px solid $commonColor;
+                color: $commonColor;
+                transition: 0.3s;
+            }
+        }
+    }
+}

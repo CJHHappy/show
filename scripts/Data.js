@@ -151,6 +151,14 @@ var Data = [
         href: "exercise/htmlcss/居家游rem版/index.html"
       },
       {
+        title: "京东首页",
+        href: "exercise/htmlcss/京东首页/京东.html"
+      },
+      {
+        title: "小米首页",
+        href: "exercise/htmlcss/小米官网/index.html"
+      },
+      {
         title: "css3字体飞入",
         href: "exercise/htmlcss/字体飞入/index.html"
       },
@@ -193,6 +201,10 @@ var Data = [
       {
         title: "vue-todolist",
         href: "exercise/vue/vue-todolist/todolist.html"
+      },
+      {
+        title: "shoppingcart",
+        href: "exercise/vue/shoppingcart/shoppingcart.html"
       }
     ],
   },
