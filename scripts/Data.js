@@ -216,7 +216,7 @@ var Data = [
     children: [
       {
         title: "canvasSnake",
-        href: "exercise/demo/canvasSnake/index.html"
+        href: "exercise/demo/snake/index.html"
       },
       {
         title: "canvas粒子连线",
