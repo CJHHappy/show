@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>snake</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <div class="main">
+        <div class="map">
+            <canvas class="content"></canvas>
+        </div>
+        <div class="user-infor">
+            <div class="socre-wrapper"><span>当前得分：</span><span class="score">0</span></div>
+            <div class="pat-wrapper"><span>当前模式：</span><span class="now-pattern"></span></div>
+            <div class="action-btn"><span class="reset-game">重新开始</span><span class="stop-game">暂停游戏</span><span class="out-game">退出游戏</span></div>
+        </div>
+    </div>
+    <div class="conductor" style="display: block">
+        <div class="title">
+            <span class="title-text">Happy Snaker of private</span>
+            <div class="box">
+                <div class="snake-wrapper">
+                    <i></i><i></i><i></i><i></i><i></i><i class="last"></i>
+                </div>
+                <div class="methods">
+                    <p class="produce clearfix"><span class="p-t">游戏说明：</span><span class="next" style="display: block;">下一步</span><span class="select-pattern" style="display: none;">选择模式</span></p>
+                    <p class="content-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <input type="button" class="left" value="重选模式">
+            <input type="button" class="right" value="进入游戏">
+        </div>
+    </div>
+    <div class="mark" style="display: none;"></div>
+    <div class="readtime" style="display: none"><span>0</span><span>0 : </span><span>0</span><span class="timenum">5</span></div>
+    <div class="pattern-wrapper" style="display: none">
+            <div class="sel-wrap">
+                <span class="icon"></span>
+                <span class="pattern-name">越境贪吃模式</span>
+            </div>
+            <div class="sel-wrap">
+                <span class="icon"></span>
+                <span class="pattern-name">碰撞贪吃模式</span>
+            </div>
+            <div class="sel-wrap">
+                <span class="icon"></span>
+                <span class="pattern-name">极限模式</span>
+            </div>
+            <!-- <div class="sel-wrap">
+                <span class="icon"></span>
+                <span class="pattern-name">碎迷宫模式</span>
+            </div>
+            <div class="sel-wrap">
+                <span class="icon"></span>
+                <span class="pattern-name">进出洞模式</span>
+            </div> -->
+            <div class="sele-btns">
+                <span class="crash">取消</span>
+                <span class="sure">确定</span>
+            </div>
+    </div>
+    <div class="gameover" style="display: none">
+        <div class="warn-wrapper">
+            <div class="gameovertext">游戏结束！</div>
+            <div class="snake-wrapper">
+                    <i></i><i></i><i></i><i></i><i></i><i class="last"></i>
+            </div>
+        </div>
+        <div class="gameover-btns">
+            <span class="go-replay">再来一局</span>
+            <span class="go-returnhome">返回首页</span>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

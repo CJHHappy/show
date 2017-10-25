@@ -1,0 +1,482 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+}
+@font-face {
+    font-family: fontOne;
+    src: url('../font/1.TTF');
+}
+/* @font-face {
+    font-family: fontTwo;
+    src: url('../font/2.TTF');
+}
+@font-face {
+    font-family: fontThree;
+    src: url('../font/3.TTF');
+} */
+.main {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.main .map,.main .user-infor {
+    float: left;
+}
+.main .map {
+    width: calc(100% - 350px);
+    height: 100%;
+}
+.main .user-infor {
+    /* width: calc(100% - 1000px); */
+    width: 350px;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 1px solid #EFD52C;
+    background-color: #EFD52C;
+}
+.main .user-infor .socre-wrapper,
+.main .user-infor .pat-wrapper{
+    width: 100%;
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+.main .user-infor .socre-wrapper span,
+.main .user-infor .pat-wrapper span {
+    margin-right: 20px;
+    color: #fff;
+}
+.main .user-infor .action-btn {
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+}
+.main .user-infor .action-btn span {
+    display: inline-block;
+    height: 40px;
+    width: 80%;
+    text-align: center;
+    line-height: 40px;
+    background-color: orange;
+    margin-bottom: 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.main .user-infor .action-btn span:hover {
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+}
+.main .map .content {
+    display: block;
+    background-color: #fff;
+}
+.conductor {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #EFD52C;
+    top:0;
+    left: 0;
+}
+.conductor-out {
+    top: -100%;
+    transition: all 0.5s;
+}
+.conductor-in {
+    top:0;
+    transition: all 0.5s;
+}
+.conductor .title {
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    margin-top: -75px;
+}
+.conductor .title .title-text {
+    position: absolute;
+    display: block;
+    width: 520px;
+    left: -520px;
+    top: 0;
+    line-height: 150px;
+    font-size: 80px;
+    font-weight: bold;
+    color: #fff;
+    font-family: fontOne;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.conductor .title .title-move{
+    left: calc(50% - 260px);
+    transition: all 0.5s;
+}
+.conductor .title .title-animate {
+    animation: leftandright 0.5s ease;
+}
+.conductor .title .hidden {
+    bottom: 1px;
+    tansition: all 0.5s;
+}
+.conductor .title .box {
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    left: 0;
+    bottom: -140px;
+    overflow: hidden;
+}
+.conductor .title .box .snake-wrapper {
+    width: 120px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    left: -130px;
+}
+.conductor .title .box .show {
+    left: calc(50% - 400px);
+    transition: all 1s linear;
+}
+.conductor .title .box .out {
+    left: 110%;
+    transition: all 0.5s linear;
+}
+.conductor .title .box .snake-wrapper i {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    border-radius: 50%;
+    position: relative;
+}
+.conductor .title .box .last::after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 2px solid #fff;
+}
+.conductor .title .box .last::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: black;
+    position: absolute;    
+    bottom: 0px;
+    right: 0px;
+    border: 2px solid #fff;
+}
+.conductor .title .box .methods {
+    width: 350px;
+    height: 120px;
+    position: absolute;
+    left: calc(50% - 260px);
+    bottom: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    transition: all 0.2s;
+}
+.conductor .title .box .m-show {
+    opacity: 1;
+    transition: all 1s;
+}
+.conductor .title .box .methods p {
+    width: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #666;
+}
+.conductor .title .box .methods .produce {
+    width: 100%;
+    height: 20px;
+}
+.conductor .title .box .methods .produce .p-t {
+    float: left;
+}
+.conductor .title .box .methods .produce .next,
+.conductor .title .box .methods .produce .select-pattern {
+    float: right;
+    cursor: pointer;
+}
+.conductor .title .box .methods .produce .next:hover,
+.conductor .title .box .methods .produce .select-pattern:hover {
+    text-decoration: underline;
+}
+.conductor .title .box .methods .content-text {
+    text-indent: 20px;
+    color: #666;
+}
+.conductor .title .box .methods:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-right: 15px solid #fff;
+    border-bottom: 20px solid transparent;
+    border-left: 0px;  solid  transparent;
+    left: -15px;
+    top: 25px;
+}
+.buttons {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons input {
+    width: 120px;
+    height: 40px;
+    outline: none;
+    border:none;
+    background-color: orange;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.1s;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+}
+.buttons input:hover {
+    transform: scale(1.2);
+    transition: all 0.1s;
+}
+.buttons input:nth-child(1) {
+    margin-right: 50px;
+}
+.mark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+.pattern-wrapper {
+    width: 300px;
+    height: 400px;
+    box-sizing: border-box;
+    border: 10px solid #EFD52C;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left:  -150px;
+    margin-top: -200px;
+    box-shadow: 0 0 10px 0 #EFD52C;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 102;
+}
+.pattern-wrapper .sel-wrap {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 0;
+}
+.pattern-wrapper .sel-wrap .icon {
+    display: inline-block;
+    width: 10px;
+    height:10px;
+    border-radius: 50%;
+    line-height: 50px;
+    background-color: #fff;
+    margin-left: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 0 5px #fff, 0 0 0 6px #ccc;
+    cursor: pointer;
+}
+.pattern-wrapper .sel-wrap .icon-sec {
+    background-color: #EFD52C;
+}
+.pattern-wrapper .sel-wrap .pattern-name {
+    font-size: 18px;
+    line-height: 50px;
+    margin-left: 30px;
+}
+.pattern-wrapper .sele-btns {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pattern-wrapper .sele-btns span {
+    display: block;
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #EFD52C;
+    cursor: pointer;
+}
+.pattern-wrapper .sele-btns span:hover {
+    box-shadow: 0 0 10px 0 #EFD52C;
+}
+.pattern-wrapper .sele-btns .crash {
+    margin-right: 30px;
+}
+.clearfix:after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+.readtime {
+    width: 100px;
+    height: 50px;
+    background-color: #EFD52C;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    left: calc((100% - 350px) / 2);
+    top: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 #EFD52C;
+    font-size: 25px;
+    opacity: 0;
+}
+.readtime-in {
+    opacity: 1;
+    transition: all 0.5s;
+}
+.gameover {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: calc((100% - 350px) / 2);
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    box-shadow: 0 0 10px 0 #EFD52C;
+    background-color: #fff;
+}
+.gameover .warn-wrapper {
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+.gameover .warn-wrapper .snake-wrapper {
+    height: 120px;
+    width: 10px;
+    position: absolute;
+    top: -15px;
+    left: 30px;
+}
+.gameover .warn-wrapper .snake-wrapper i {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #EFD52C;
+    border-radius: 50%;
+    position: relative;
+}
+.gameover .warn-wrapper .snake-wrapper i.last::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 3px;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+    left: -1px;
+    border: 2px solid #fff;
+}
+.gameover .warn-wrapper .snake-wrapper i.last::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 3px;
+    background-color: black;
+    position: absolute;    
+    bottom: 0px;
+    right: -1px;
+    border: 2px solid #fff;
+}
+.gameover .warn-wrapper .gameovertext {
+    width: 100%;
+    height:  120px;
+    text-align:  center;
+    line-height: 150px;
+}
+.gameover .gameover-btns {
+    width:  100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.gameover .gameover-btns .go-replay,
+.gameover .gameover-btns .go-returnhome {
+    padding: 8px 15px;
+    background-color: #EFD52C;
+    border-radius: 5px;
+    color:  #fff;
+    font-size:  14px;
+}
+.gameover .gameover-btns .go-replay {
+    margin-right: 30px;
+}
+.gameover .gameover-btns span:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    transition:  all 0.2s;
+}
+
+@keyframes leftandright {
+    0% {
+        transform: skew(0deg);
+    }
+    25% {
+        transform: skew(-45deg);
+    }
+    75% {
+        transform: skew(45deg);
+    }
+    100% {
+        transform: skew(0deg);
+    }
+}

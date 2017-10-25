@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            margin:  0;
+            padding:  0;
+        }
+    </style>
+</head>
+<body>
+<canvas class="canvas"></canvas>
+<script type="text/javascript">
+    var canvas = document.getElementsByClassName('canvas')[0];
+    var cxt = canvas.getContext("2d");
+    var mapWidth = window.innerWidth;
+    var mapHeight = window.innerHeight;
+    var r = 10;
+    lineSpace = 150;
+    mapr = 50;
+    canvas.width = mapWidth;
+    canvas.height = mapHeight;
+    canvas.style.display = "block";
+
+
+    document.onclick = function(ev) {
+        var x = ev.clientX;
+        var y = ev.clientY;
+        var piex = cxt.getImageData(x, y, 1, 1);
+        var data = piex.data;
+        console.log(data);
+
+    }
+
+    var drawBlock = function() {
+        cxt.beginPath();
+        // 1
+        cxt.moveTo(lineSpace, 0);
+        cxt.lineTo(lineSpace, mapHeight / 2 - r - 10);
+        cxt.moveTo(0, lineSpace);
+        cxt.lineTo(mapWidth / 2 - r - 1, lineSpace);
+        // 2
+        cxt.moveTo(lineSpace, mapHeight / 2 + r + 10);
+        cxt.lineTo(lineSpace, mapHeight);
+        cxt.moveTo(0, mapHeight - lineSpace);
+        cxt.lineTo(mapWidth / 2 - r - 10, mapHeight - lineSpace);
+        // 3 
+        cxt.moveTo(mapWidth / 2 + r + 1, lineSpace);
+        cxt.lineTo(mapWidth, lineSpace);
+        cxt.moveTo(mapWidth - lineSpace, 0);
+        cxt.lineTo(mapWidth - lineSpace, mapHeight / 2 - r - 1);
+        // 4
+        cxt.moveTo(mapWidth - lineSpace, mapHeight / 2 + r + 1);
+        cxt.lineTo(mapWidth - lineSpace, mapHeight);
+        cxt.moveTo(mapWidth / 2 + r + 10, mapHeight - lineSpace);
+        cxt.lineTo(mapWidth ,mapHeight - lineSpace);
+        cxt.stroke();
+        cxt.closePath();
+        // y1
+        cxt.beginPath();
+        cxt.arc((mapWidth - lineSpace * 2) / 4 + lineSpace, (mapHeight - lineSpace * 2) / 2 +lineSpace, mapr * 3, 0, Math.PI, true);
+        cxt.stroke();
+        cxt.closePath();
+        cxt.beginPath();
+        cxt.arc((mapWidth - lineSpace * 2) / 4 + lineSpace, (mapHeight - lineSpace * 2) / 2 +lineSpace, (mapWidth - lineSpace * 2) / 4 - mapr - 100, 0, Math.PI, true);
+        cxt.stroke();
+        cxt.closePath();
+        // y2
+        cxt.beginPath();
+        cxt.arc(mapWidth / 2, mapHeight / 2, mapr * 3, 0, Math.PI, false);
+        cxt.stroke();
+        cxt.closePath();
+        cxt.beginPath();
+        cxt.arc(mapWidth / 2, mapHeight / 2, (mapWidth - lineSpace * 2) / 4 - mapr - 100, 0, Math.PI, false);
+        cxt.stroke();
+        cxt.closePath();
+        // y3
+        cxt.beginPath();
+        cxt.arc((mapWidth - lineSpace * 2) / 4 * 3 + lineSpace, (mapHeight - lineSpace * 2) / 2 +lineSpace, mapr * 3, 0, Math.PI, true);
+        cxt.stroke();
+        cxt.closePath();
+        cxt.beginPath();
+        cxt.arc((mapWidth - lineSpace * 2) / 4 * 3 + lineSpace, (mapHeight - lineSpace * 2) / 2 +lineSpace, (mapWidth - lineSpace * 2) / 4 - mapr - 100, 0, Math.PI, true);
+        cxt.stroke();
+        cxt.closePath();
+        
+    }
+    drawBlock();
+</script>
+</body>
+</html>
